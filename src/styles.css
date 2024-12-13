@@ -1,5 +1,10 @@
 :root {
-    --fs-title: 1.5rem;
+    --ff-title: "Playfair Display", sans-serif;
+
+    --fs-title: clamp(1.5rem, 3vw, 2rem);
+    --fs-body: clamp(1rem, 2vw, 1.2rem);
+
+    --inline-pad-mobile: 1rem;
 }
 
 * {
@@ -33,23 +38,23 @@ main {
 }
 
 .content-max-width {
-    max-width: 1290px;
+    max-width: 990px;
 }
 
 .title {
-    font-size: 3rem;
-    font-weight: 400;
-    font-family: "Playfair Display", sans-serif;
+    font-size: var(--fs-title);
+    font-weight: 500;
+    font-family: var(--ff-title);
 }
 
 .about-me {
-    margin: 3rem 2rem 0;
+    margin: 2rem 1.5rem 0;
 }
 
 .profile {
     position: relative;
-    width: 34rem;
-    height: 37rem;
+    width: 24rem;
+    height: 26rem;
     overflow: hidden;
     display: grid;
     align-content: center;
@@ -59,7 +64,7 @@ main {
 
 .profile .name {
     font-family: "Playfair Display", sans-serif;
-    font-size: 4rem;
+    font-size: 3rem;
     letter-spacing: 2px;
     color: white;
     position: absolute;
@@ -74,21 +79,21 @@ main {
 }
 
 .about-me-text{
-    padding: 2rem 3rem;
-    margin-top: 5rem;
-    margin-left: 5rem;
+    padding: 1rem 2rem;
+    margin-top: 3rem;
+    margin-left: 3rem;
     background-color: aliceblue;
 }
 
 .about-me-text .title {
-    font-size: 3rem;
     font-weight: 500;
     margin-bottom: 1rem;
     font-family: "Playfair Display", sans-serif;
+    min-width: max-content;
 }
 
 .about-me-text p {
-    font-size: 1.5rem;
+    font-size: var(--fs-body);
 }
 
 .sites-list {
@@ -102,11 +107,6 @@ main {
     width: 2em;
 }
 
-.contact-me-sites .site-icon svg {
-    fill: black;
-    width: 2em;
-}
-
 footer {
     display: flex;
     justify-content: center;
@@ -115,14 +115,30 @@ footer {
 
 .footer-content {
     display: grid;
-    grid-template-columns: minmax(min-content, 400px) 1fr;
-    justify-items: center;
-    margin:4rem 2rem 3rem;
+    grid-auto-flow: column;
+    width: 100%;
+    margin:4rem 1.5rem 3rem;
     gap: 3rem;
 }
 
 .contact-me {
-    font-size: 1.5rem;
+    font-size: var(--fs-body);
+}
+
+.contact-me .title {
+    margin-bottom: .6rem;
+}
+
+.postal-address {
+    margin: 1.5rem 0;
+}
+
+.contact-me-sites {
+    margin-top: 1.5rem;
+}
+
+.contact-me p {
+    max-width: 35ch;
 }
 
 .tel, .mail {
@@ -135,6 +151,42 @@ footer {
     width: 1.5em;
 }
 
+.contact-me-sites .site-icon svg {
+    fill: black;
+    width: 2em;
+}
+
 .footer-img {
-    width: 100%;
+    width: 35rem;
+    transition: width .2s;
+}
+
+@media (max-width: 1000px) {
+    .about-me,
+    .footer-content {
+        margin-inline: var(--inline-pad-mobile);
+    }
+
+    .footer-img {
+        width: clamp(10rem, 40vw, 20rem);
+    }
+}
+
+@media (max-width: 600px) {
+    .profile {
+        height: auto;
+        width: clamp(17rem, 90vw, 24rem);
+    }
+
+    .footer-content {
+        margin-inline: 0;
+    }
+
+    .contact-me {
+        margin-inline: var(--inline-pad-mobile);
+    }
+
+    .footer-img {
+        width: 100%;
+    }
 }

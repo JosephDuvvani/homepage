@@ -15,7 +15,10 @@
     <main>
       <section class="about-me content-max-width">
         <div class="profile">
-          <img src="./images/work.jpg" class="profile-img" />
+          <picture>
+            <source media="(max-width: 600px)" srcset="images/work.jpg" />
+            <img src="./images/work-zoom-in.jpg" class="profile-img" />
+          </picture>
           <h1 class="name">Ashley Williams</h1>
         </div>
 
@@ -154,7 +157,11 @@
             </li>
           </ul>
         </section>
-        <img src="images/work-call.jpg" alt="" class="footer-img" />
+        <picture>
+          <source media="(max-width: 600px)" srcset="images/work-call-s.jpg" />
+          <source media="(max-width: 1000px)" srcset="images/work-call-m.jpg" />
+          <img src="images/work-call-l.jpg" alt="" class="footer-img" />
+        </picture>
       </div>
     </footer>
   </body>
