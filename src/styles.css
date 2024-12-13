@@ -54,8 +54,6 @@ main {
 .profile {
     position: relative;
     width: 24rem;
-    height: 26rem;
-    overflow: hidden;
     display: grid;
     align-content: center;
     float: left;
@@ -68,7 +66,7 @@ main {
     letter-spacing: 2px;
     color: white;
     position: absolute;
-    bottom: 0;
+    bottom: .5rem;
     left: 50%;
     transform: translateX(-50%);
     text-wrap: nowrap;
@@ -167,26 +165,71 @@ footer {
         margin-inline: var(--inline-pad-mobile);
     }
 
+    .profile .name {
+        top: .5rem;
+        bottom: auto;
+        left: 60vw;
+    }
+
+    .about-me-text {
+        margin-top: 6rem;
+    }
+
     .footer-img {
         width: clamp(10rem, 40vw, 20rem);
     }
 }
 
 @media (max-width: 600px) {
+    .about-me {
+        display: grid;
+        justify-items: center;
+        margin-inline: 0;
+    }
+
     .profile {
         height: auto;
-        width: clamp(17rem, 90vw, 24rem);
+        width: clamp(17rem, 80vw, 24rem);
+        margin: 0;
+    }
+
+    .profile .name {
+        text-wrap: initial;
+        left: 0;
+        top: auto;
+        bottom: 0;
+        padding: .5rem 1rem;
+        transform: translateX(0);
+    }
+
+    .about-me-text {
+        margin: 0;
+        background-color: transparent;
+    }
+
+    .about-me .title,
+    .sites-list,
+    .contact-me-sites {
+        justify-self: center;
     }
 
     .footer-content {
+        grid-auto-flow: row;
         margin-inline: 0;
+        margin-bottom: 0;
     }
 
     .contact-me {
         margin-inline: var(--inline-pad-mobile);
     }
 
+    .contact-me-sites {
+        margin-top: 3rem;
+    }
+
     .footer-img {
         width: 100%;
+        position: relative;
+        bottom: -1rem;
     }
 }
