@@ -68,6 +68,7 @@ export const renderCard = (obj, list) => {
   card.appendChild(imgContainer);
   card.appendChild(header);
   card.appendChild(descr);
-  item.appendChild(card);
+  link.appendChild(card);
+  item.appendChild(link);
   list.appendChild(item);
 };
