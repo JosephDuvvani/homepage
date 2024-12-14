@@ -159,9 +159,12 @@ main {
 }
 
 .card-header {
-    display: flex;
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: 1fr min-content;
     margin-block: 1rem;
     margin-inline: var(--_content-margin);
+    gap: 1rem;
 }
 
 .card-name {
@@ -169,6 +172,9 @@ main {
     font-size: 1.1rem;
     font-weight: 500;
     font-family: var(--ff-title);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .card-links {
