@@ -6,6 +6,9 @@
 
     --inline-pad-mobile: 1.5rem;
     --inline-pad-full: 2.5rem;
+
+    --clr-primary: hsl(0, 33%, 99%);
+    --clr-secondary: hsl(192, 38%, 46%);
 }
 
 * {
@@ -31,11 +34,20 @@ a {
 body {
     font-family: "Roboto", sans-serif; 
     line-height: 1.5;
+    position: relative;
+    background-color: var(--clr-primary);
 }
 
 .flex-gap {
     display: flex;
     gap: 2em;
+}
+
+.color-bg {
+    position: absolute;
+    border-right: 180vw solid transparent;
+    border-top: 55vh solid var(--clr-secondary);
+    z-index: -1;
 }
 
 main {
@@ -87,7 +99,8 @@ main {
     padding: 1rem 2rem;
     margin-top: 3rem;
     margin-left: 3rem;
-    background-color: aliceblue;
+    background-color: var(--clr-primary);
+    box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.2);
 }
 
 .about-me-text .title {
@@ -108,7 +121,6 @@ main {
 }
 
 .about-me-sites .site-icon svg {
-    fill: black;
     width: 2em;
 }
 
@@ -179,7 +191,7 @@ main {
 footer {
     display: flex;
     justify-content: center;
-    background-color: aliceblue;
+    background-color: var(--clr-secondary);
 }
 
 .footer-content {
@@ -188,6 +200,7 @@ footer {
     width: 100%;
     margin:4rem 1.5rem 3rem;
     gap: 3rem;
+    color: var(--clr-primary);
 }
 
 .contact-me {
@@ -216,12 +229,12 @@ footer {
 }
 
 .contact-icon svg {
-    fill: black;
+    fill: var(--clr-primary);
     width: 1.5em;
 }
 
 .contact-me-sites .site-icon svg {
-    fill: black;
+    fill: var(--clr-primary);
     width: 2em;
 }
 
@@ -259,7 +272,6 @@ footer {
     .about-me {
         display: grid;
         justify-items: center;
-        margin-inline: 0;
     }
 
     .profile {
@@ -279,7 +291,9 @@ footer {
 
     .about-me-text {
         margin: 0;
+        padding-inline: 0;
         background-color: transparent;
+        box-shadow: none;
     }
 
     .about-me .title,
