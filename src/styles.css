@@ -9,6 +9,8 @@
 
     --clr-primary: hsl(0, 33%, 99%);
     --clr-secondary: hsl(192, 38%, 46%);
+    --clr-dark: hsl(333, 33%, 6%);
+    --clr-dark-beta: hsl(330, 20%, 20%);
 }
 
 * {
@@ -105,6 +107,7 @@ main {
 
 .about-me-text .title {
     font-weight: 500;
+    color: var(--clr-dark);
     margin-bottom: 1rem;
     font-family: "Playfair Display", sans-serif;
     min-width: max-content;
@@ -112,6 +115,7 @@ main {
 
 .about-me-text p {
     font-size: var(--fs-body);
+    color: var(--clr-dark-beta);
 }
 
 .sites-list {
@@ -130,6 +134,7 @@ main {
 
 .projects .title {
     margin-block: 5rem 1rem;
+    color: var(--clr-dark);
 }
 
 .projects-list {
@@ -172,6 +177,7 @@ main {
     font-size: 1.1rem;
     font-weight: 500;
     font-family: var(--ff-title);
+    color: var(--clr-dark);
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -189,6 +195,7 @@ main {
 
 .card-description {
     font-size: .9rem;
+    color: var(--clr-dark-beta);
     height: 2.5rem;
     overflow: hidden;
     margin-bottom: 3rem;
@@ -358,6 +365,13 @@ a:focus {
 .project-link:focus .card {
     transform: scale(1.1);
     background-color: var(--clr-secondary);
+    color: var(--clr-primary);
+}
+
+.project-link:hover .card .card-name,
+.project-link:focus .card .card-name,
+.project-link:hover .card .card-description,
+.project-link:focus .card .card-description{
     color: var(--clr-primary);
 }
 
