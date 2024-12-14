@@ -1,7 +1,7 @@
 :root {
     --ff-title: "Playfair Display", sans-serif;
 
-    --fs-title: clamp(1.5rem, 3vw, 2rem);
+    --fs-title: clamp(2rem, 3vw, 2.5rem);
     --fs-body: clamp(1rem, 2vw, 1.2rem);
 
     --inline-pad-mobile: 1.5rem;
@@ -129,7 +129,7 @@ main {
 }
 
 .projects .title {
-    margin-block: 3rem 1rem;
+    margin-block: 5rem 1rem;
 }
 
 .projects-list {
@@ -177,6 +177,7 @@ main {
 }
 
 .card-link svg{
+    fill: currentColor;
     width: 1.5rem;
 }
 
@@ -327,4 +328,36 @@ footer {
         position: relative;
         bottom: -1rem;
     }
+}
+
+/* Events */
+
+a:hover,
+a:focus {
+    outline: none;
+}
+
+.link-icon:hover svg,
+.link-icon:focus svg {
+    transform: scale(1.5);
+    border-radius: 2px;
+    padding: 2px;
+}
+
+.link-icon:focus svg {
+    border: 1px solid currentColor;
+}
+
+.project-link:hover .card,
+.project-link:focus .card {
+    transform: scale(1.1);
+    background-color: var(--clr-secondary);
+    color: var(--clr-primary);
+}
+
+.email-link:hover,
+.email-link:focus {
+    text-decoration-line: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 2px;
 }

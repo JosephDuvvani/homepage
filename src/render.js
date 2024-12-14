@@ -33,6 +33,7 @@ export const renderCard = (obj, list) => {
   github.setAttribute("href", `${obj.getGithubUrl()}`);
   github.classList.add("card-link_github");
   github.classList.add("card-link");
+  github.classList.add("link-icon");
   github.innerHTML = `
     <svg viewBox="0 0 128 128">
         <path
@@ -46,6 +47,7 @@ export const renderCard = (obj, list) => {
   liveProject.setAttribute("href", `${obj.getLiveUrl()}`);
   liveProject.classList.add("card-link_live");
   liveProject.classList.add("card-link");
+  liveProject.classList.add("link-icon");
   liveProject.innerHTML = `
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
       <title>open-in-new</title>
